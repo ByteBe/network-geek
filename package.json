@@ -1,0 +1,91 @@
+{
+  "name": "huawei-h3c-commands",
+  "displayName": "华为/华三命令集",
+  "description": "华为和华三交换路由设备命令集支持",
+  "version": "1.0.0",
+  "publisher": "network-geek",
+  "icon": "images/icon.png",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "keywords": [
+    "华为",
+    "华三",
+    "Huawei",
+    "H3C",
+    "网络设备",
+    "交换机",
+    "路由器"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "huawei-h3c-commands.checkUpdate",
+        "title": "检查扩展更新",
+        "category": "华为/华三"
+      },
+      {
+        "command": "huawei-h3c-commands.setUpdateUrl",
+        "title": "设置更新服务器",
+        "category": "华为/华三"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "huawei-h3c-commands.checkUpdate"
+        },
+        {
+          "command": "huawei-h3c-commands.setUpdateUrl"
+        }
+      ]
+    },
+    "languages": [
+      {
+        "id": "huawei-h3c",
+        "aliases": ["华为/华三配置", "Huawei/H3C Config"],
+        "extensions": [".cfg", ".conf", ".txt", ".huawei", ".h3c"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "huawei-h3c",
+        "scopeName": "source.huawei-h3c",
+        "path": "./syntaxes/huawei-h3c.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "huawei-h3c",
+        "path": "./snippets/huawei-h3c.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "echo done",
+    "watch": "echo done",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ByteBe/network-geek.git"
+  },
+  "homepage": "https://github.com/ByteBe/network-geek",
+  "bugs": {
+    "url": "https://github.com/ByteBe/network-geek/issues"
+  },
+  "license": "MIT"
+}
