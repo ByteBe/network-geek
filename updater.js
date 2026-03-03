@@ -12,7 +12,7 @@ class ExtensionUpdater {
         this.context = context;
         this.extensionId = 'network-geek.huawei-h3c-commands';
         const extension = vscode.extensions.getExtension(this.extensionId);
-        this.currentVersion = extension ? extension.packageJSON.version : '1.1.0';
+        this.currentVersion = extension ? extension.packageJSON.version : '1.2.0';
         this.updateUrl = 'https://api.github.com/repos/ByteBe/network-geek/releases/latest';
         this.downloadBaseUrl = 'https://github.com/ByteBe/network-geek/releases/download';
         this.checkInterval = 24 * 60 * 60 * 1000; // 每天检查一次（毫秒）
@@ -85,7 +85,7 @@ class ExtensionUpdater {
                 res.on('end', () => {
                     try {
                         const release = JSON.parse(data);
-                        // 从tag_name中提取版本号 (例如: v1.1.0 -> 1.1.0)
+                        // 从tag_name中提取版本号 (例如: v1.2.0 -> 1.2.0)
                         const version = release.tag_name.replace('v', '');
                         resolve(version);
                     } catch (error) {

@@ -1,9 +1,10 @@
 {
   "name": "huawei-h3c-commands",
   "displayName": "华为/华三命令集",
-  "description": "华为和华三交换路由设备命令集支持 - 专业网络工程师工具",
-  "version": "1.1.0",
+  "description": "华为和华三交换路由设备命令集支持 - 专业网络工程师工具（支持MPLS VPN和高级路由协议）",
+  "version": "1.2.0",
   "publisher": "network-geek",
+  "license": "MIT",
   "icon": "images/icon.png",
   "engines": {
     "vscode": "^1.80.0"
@@ -22,8 +23,13 @@
     "路由器",
     "OSPF",
     "BGP",
-    "VLAN",
-    "STP",
+    "ISIS",
+    "RIP",
+    "静态路由",
+    "MPLS",
+    "LDP",
+    "VPN",
+    "VPLS",
     "网络工程师"
   ],
   "activationEvents": [
@@ -57,7 +63,7 @@
       {
         "id": "huawei-h3c",
         "aliases": ["华为/华三配置", "Huawei/H3C Config", "Network Config"],
-        "extensions": [".cfg", ".conf", ".txt", ".huawei", ".h3c", ".network"],
+        "extensions": [".cfg", ".conf", ".txt", ".huawei", ".h3c", ".network", ".mpls", ".vpn"],
         "configuration": "./language-configuration.json"
       }
     ],
